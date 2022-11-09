@@ -1,22 +1,21 @@
 <?php
 
 class Data {
+    
+    function Conexion(){
+        $serverName = "DESKTOP-JP735J3"; //serverName\instanceName
 
-    public $server;
-    public $user;
-    public $password;
-    public $db;
-    public $connection;
-    public $isActive;
+        $connectionInfo = array( "Database"=>"db_Supermercado");
+        $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
-    public function Data() {
-        
-                 $this->isActive = false;
-      			 $this->server = "127.0.0.1";
-      			 $this->user = "root";
-      			 $this->password = "";
-      			 $this->db = "db_Supermercado"; 
-              
+    if( $conn ) {
+        echo "Se conecto correctamente a la base de datos";
+    }else{
+        echo "No se conecto correctamente a la base de datos";
+        die( print_r( sqlsrv_errors(), true));
     }
-
 }
+        
+}
+
+?>
