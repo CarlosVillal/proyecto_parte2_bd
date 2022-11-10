@@ -7,7 +7,7 @@ class Activo{
     private $act_descripcion;
     private $tipo_activo_id;
 
-    function Supermercado($act_id, $act_nombre, $act_descripcion, $tipo_activo_id){
+    function Activo($act_id, $act_nombre, $act_descripcion, $tipo_activo_id){
         $this->act_id = $act_id;
         $this->act_nombre = $act_nombre;
         $this->act_descripcion = $act_descripcion;

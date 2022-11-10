@@ -9,7 +9,7 @@ class Empleado{
     private $emp_telefono;
     private $supermercado_id;
 
-    function Supermercado($emp_cedula, $emp_nombre, $emp_apellido,
+    function Empleado($emp_cedula, $emp_nombre, $emp_apellido,
     $emp_correo, $emp_telefono, $supermercado_id){
 
         $this->emp_cedula = $emp_cedula;

@@ -4,12 +4,12 @@
 class Venta_Producto{
     private $ven_prod_id;
     private $productoId;
-    private $productoId;
+    private $ventaId;
 
-    function Venta_Producto($ven_prod_id, $productoId, $productoId){
+    function Venta_Producto($ven_prod_id, $productoId, $ventaId){
         $this->ven_prod_id = $ven_prod_id;
         $this->productoId = $productoId;
-        $this->productoId = $productoId;
+        $this->ventaId = $ventaId;
     }
 
     function getVen_prod_id(){

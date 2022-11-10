@@ -7,7 +7,7 @@ class Proveedor{
     private $prov_correo;
     private $prov_telefono;
 
-    function Supermercado($prov_id, $prov_nombre, $prov_correo, $prov_telefono){
+    function Proveedor($prov_id, $prov_nombre, $prov_correo, $prov_telefono){
 
         $this->prov_cedula = $prov_cedula;
         $this->prov_nombre = $prov_nombre;

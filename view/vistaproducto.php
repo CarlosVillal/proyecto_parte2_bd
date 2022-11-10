@@ -1,6 +1,6 @@
 <?php
 include '../business/productoBusiness.php';
-
+include '../business/proveedorBusiness.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,16 @@ include '../business/productoBusiness.php';
         <td><input type="text" id="productoNombre" name="productoNombre" placeholder="Nombre Producto" required></td>
         <td><input type="text" id="productoDescripcion" name="productoDescripcion" placeholder="Descripcion Producto" required></td>
         <td><input type="number" id="productoPrecio" name="productoPrecio" placeholder="Producto Precio" required></td>
-        <td><input type="number" id="provedorId" name="provedorId" placeholder="ID Provedor" required></td>
+        <td><p>Provedor:<select id="provedorId" name="provedorId" required >
+                                
+                                <?php
+                             $proveedorBusiness = new proveedorBusiness();
+                             $proveedores = $proveedorBusiness->obtener();
+                             foreach ($proveedores as $row) {                                
+                               echo '<option value="'. $row->getProv_nombre(). '">'. $row->getProv_id(). ' - '. $row->getProv_nombre(). '</option>';                                
+                             }
+                             ?>
+                             </select></td>
         <td><input type="number" id="productoNumeroStock" name="productoNumeroStock" placeholder="Numero Stock" required></td>
 
         <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar" /> </td>
@@ -47,7 +56,7 @@ include '../business/productoBusiness.php';
       $productoBusiness = new productoBusiness();
       $productos = $productoBusiness->obtener();
       foreach ($productos as $row) {
-        echo '<form  method="post" enctype="multipart/form-data" action="../business/tipoProductoAction.php">';
+        echo '<form  method="post" enctype="multipart/form-data" action="../business/productoAction.php">';
         echo '<input type="hidden" name="productoId" value="' . $row->getProductoId() . '">';
         echo '<tr>';
 

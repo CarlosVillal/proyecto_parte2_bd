@@ -1,5 +1,7 @@
 <?php 
   include '../business/ventaBusiness.php'; 
+  include '../business/clienteVIPBusiness.php'; 
+  include '../business/empleadoBusiness.php'; 
 
 ?>
 
@@ -21,6 +23,27 @@
         <td><input type="number" id="ventaId" name="ventaId" placeholder="ID Venta" required></td>
         <td><input type="text" id="ventaFecha" name="ventaFecha" placeholder="Fecha venta" required></td>
         <td><input type="text" id="ventaTotal" name="ventaTotal" placeholder="Venta Total" required></td>
+        <td><p>Empleado:<select id="empleadoCedula" name="empleadoCedula" required >
+                                
+                                <?php
+                             $empleadoBusiness = new empleadoBusiness();
+                             $empleados = $empleadoBusiness->obtener();
+                             foreach ($empleados as $row) {                                
+                               echo '<option value="'. $row->getEmp_nombre(). '">'. $row->getEmp_cedula(). ' - '. $row->getEmp_nombre(). '</option>';                                
+                             }
+                             ?>
+                             </select></td>
+                             <td><p>Cliente VIP:<select id="clienteCedula" name="clienteCedula" required >
+                                
+                                <?php
+                             $clienteVIPBusiness = new clienteVIPBusiness();
+                             $clientesVIP = $clienteVIPBusiness->obtener();
+                             foreach ($clientesVIP as $row) {                                
+                               echo '<option value="'. $row->getCli_nombre(). '">'. $row->getCli_cedula(). ' - '. $row->getCli_nombre(). '</option>';                                
+                             }
+                             ?>
+                             </select></td>
+       
         <td><input type="number" id="empleadoCedula" name="empleadoCedula" placeholder="Cedula Empleado" required></td>
         <td><input type="number" id="clienteCedula" name="clienteCedula" placeholder="Cliente Cedula" required></td>
         
