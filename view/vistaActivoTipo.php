@@ -3,7 +3,6 @@ include '../business/activoTipoBusiness.php';
 ?>
 
 <!DOCTYPE html>
-
 <head>
   <title>Tipo de Avtivo</title>
 </head>

@@ -1,12 +1,9 @@
     <?php
 include '../business/empleadoBusiness.php';
-
 ?>
 
 <!DOCTYPE html>
-
 <head>
-
   <title>Empleados</title>
 </head>
 
@@ -16,14 +13,11 @@ include '../business/empleadoBusiness.php';
     <div class="table-responsive">
       <table class="table table-bordered">
 
-
-
         <td><input type="number" id="emp_cedula" name="emp_cedula" placeholder="Cedula Empleado" required></td>
         <td><input type="text" id="emp_nombre" name="emp_nombre" placeholder="Nombre Empleado" required></td>
         <td><input type="text" id="emp_apellido" name="emp_apellido" placeholder="Apellido Empleado" required></td>
         <td><input type="text" id="emp_correo" name="emp_correo" placeholder="Correo Empleado" required></td>
         <td><input type="number" id="emp_telefono" name="emp_telefono" placeholder="Telefono Empleado" required></td>
-
 
         <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar" /> </td>
       </table>
@@ -69,13 +63,9 @@ include '../business/empleadoBusiness.php';
     </tbody>
   </table>
 
-
   <?php
   echo '</br></br><button name="Volver" id="volver"><a href="../">Volver</a></button><br>';
   ?>
-
-
-
 
 </body>
 

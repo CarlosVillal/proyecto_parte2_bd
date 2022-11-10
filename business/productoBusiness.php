@@ -1,13 +1,12 @@
 <?php
-
 include '../data/productoData.php';
 
-class productoBusiness{
+class ProductoBusiness{
 
     private $productoData;
 
-    public function productoBusiness() {
-        $this->productoData= new productoData();
+    public function ProductoBusiness() {
+        $this->productoData= new ProductoData();
     }
 
     public function insertar($producto) {
@@ -25,11 +24,8 @@ class productoBusiness{
     public function obtener() {
         return $this->productoData->getProducto();
     }
-
     
     
     
 }
-
-
 ?>

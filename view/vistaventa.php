@@ -44,7 +44,7 @@
                              ?>
                              </select></td>
        
-        <td><input type="number" id="empleadoCedula" name="empleadoCedula" placeholder="Cedula Empleado" required></td>
+       <!-- <td><input type="number" id="empleadoCedula" name="empleadoCedula" placeholder="Cedula Empleado" required></td>   -->
         <td><input type="number" id="clienteCedula" name="clienteCedula" placeholder="Cliente Cedula" required></td>
         
                       <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar"/> </td>

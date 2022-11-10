@@ -1,13 +1,9 @@
-
 <?php
 include '../business/proveedorBusiness.php';
-
 ?>
 
 <!DOCTYPE html>
-
 <head>
-
   <title>Provedores</title>
 </head>
 
@@ -56,8 +52,7 @@ include '../business/proveedorBusiness.php';
         echo '<td><input  type="text" id="prov_nombre" name="prov_nombre"  value="' . $row->getProv_nombre() . '"/></td>';
         echo '<td><input  type="text" id="prov_correo" name="prov_correo"  value="' . $row->getProv_correo() . '"/></td>';
         echo '<td><input  type="text" id="prov_telefono" name="prov_telefono"  value="' . $row->getProv_telefono() . '"/></td>';
-       
-       
+
       ?>
         <td><input type="submit" value="Actualizar" name="Actualizar" id="update" onclick="return confirm('Seguro que desea guardar los cambios?')" /></td>
         <td><input type="submit" value="Eliminar" name="Eliminar" id="delete" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
@@ -71,12 +66,9 @@ include '../business/proveedorBusiness.php';
     </tbody>
   </table>
 
-
   <?php
   echo '</br></br><button name="Volver" id="volver"><a href="../">Volver</a></button><br>';
   ?>
-
-
 
 
 </body>

@@ -1,108 +1,68 @@
 <?php
-
 include 'ventaBusiness.php';
 
 
-if(isset($_POST['insertar'])){
-    if (isset($_POST['fecha']) && isset($_POST['observacion']) && isset($_POST['estado'])
-) {
- $fecha = $_POST['fecha'];
- $observacion = $_POST['observacion'];
- $estado = $_POST['estado'];
+if(isset($_POST['Insertar'])){
+
+ $ventaId = $_POST['ventaId'];
+ $ventaFecha = $_POST['ventaFecha'];
+ $ventaTotal = $_POST['ventaTotal']; 
+ $empleadoCedula = $_POST['empleadoCedula']; 
+ $clienteCedula = $_POST['clienteCedula']; 
  
+ $venta = new Venta($ventaId, $ventaFecha, $ventaTotal, $empleadoCedula, $clienteCedula);
  
- $cita = new Cita(0,$fecha, $observacion, $estado);
- 
- $CitaBusiness = new CitaBusiness();
- $resultado = $CitaBusiness->insertar($cita);
+ $ventaBusiness = new VentaBusiness();
+ $resultado = $ventaBusiness->insertar($venta);
  
     if($resultado == 1){
-         Header("Location: ../views/vistacita.php?success=inserted");
+         Header("Location: ../view/vistaventa.php?success=inserted");
      }else{
-         Header("Location: ../views/vistacita.php?error=dbError");
-     }
-
-
-    }
-
-
+         Header("Location: ../view/vistaventa.php?error=dbError");
+     }    
 }
 
 
 
-//$metodoAction ==2, es eliminar un registro 
+//eliminar registro 
 if(isset($_POST['Eliminar'])){
 
-    if (isset($_POST['idcita'])){
-        $id=$_POST['idcita'];
-        $CitaBusiness = new CitaBusiness();
-
-        $result = $CitaBusiness->delete($id);
+    if (isset($_POST['ventaId'])){
+        $id=$_POST['ventaId'];
         
-        if($result == 1){
-           
-        header("Location: ../views/vistacita.php?success=deleted");
-    }else{
-       
-        header("Location: ../views/vistacita.php?error=dbError");
+        $ventaBusiness = new VentaBusiness();
+        $result = $ventaBusiness->delete($id);
+        
+        if($result == 1){           
+        header("Location: ../view/vistaventa.php?success=deleted");
+    }else{       
+        header("Location: ../view/vistaventa.php?error=dbError");
     }
     }
 }
     
 
 
-
-
-
-//$metodoAction == 3, es actualizar un registro 
-
+//actualizar registro 
 if(isset($_POST['Actualizar'])){
 
-    if (isset($_POST['fecha']) && isset($_POST['observacion']) && isset($_POST['estado'])
-) 
+    $ventaId = $_POST['ventaId'];
+    $ventaFecha = $_POST['ventaFecha'];
+    $ventaTotal = $_POST['ventaTotal']; 
+    $empleadoCedula = $_POST['empleadoCedula']; 
+    $clienteCedula = $_POST['clienteCedula']; 
     
-     {
-        $idcita=$_POST['idcita'];
-        $fecha = $_POST['fecha'];
-        $observacion = $_POST['observacion'];
-        $estado = $_POST['estado'];
+    $venta = new Venta($ventaId, $ventaFecha, $ventaTotal, $empleadoCedula, $clienteCedula);
     
-        $cita = new Cita($idcita, $fecha, $observacion, $estado);
-    
-        $CitaBusiness = new CitaBusiness();
-        $resultado = $CitaBusiness->update($cita);
+    $ventaBusiness = new VentaBusiness();
+    $resultado = $ventaBusiness->update($venta);
     
         if($resultado == 1){
-            Header("Location: ../views/vistacita.php?success=update");
+            Header("Location: ../view/vistaventa.php?success=update");
         }else{
-            Header("Location: ../views/vistacita.php?error=dbError");
+            Header("Location: ../view/vistaventa.php?error=dbError");
         }
-    }
-
-   
-    if(!isset($_POST['buscar'])){
-        $_POST['buscar'] = "";
-        $buscar = $_POST['buscar'];
-    }
-    
-    if(isset($_POST['buscar'])){
-        $buscar = $_POST['buscar'];
-        $ClienteBusiness = new ClienteBusiness();
-    
-        $result = $ClienteBusiness->search($buscar);
-        
-        if($result == 1){
-           
-        header("Location: ../views/vistacliente.php?success=deleted");
-    }else{
-       
-        header("Location: ../views/vistacliente.php?error=dbError");
-    }
-    }
-    
+    }  
 
 
-
-
-}
 ?>

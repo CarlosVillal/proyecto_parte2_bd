@@ -1,13 +1,9 @@
-
 <?php
-include '../business/cilenteVIPBusiness.php';
-
+include '../business/clienteVIPBusiness.php';
 ?>
 
 <!DOCTYPE html>
-
 <head>
-
   <title>Clientes VIP</title>
 </head>
 
@@ -17,14 +13,11 @@ include '../business/cilenteVIPBusiness.php';
     <div class="table-responsive">
       <table class="table table-bordered">
 
-
-
         <td><input type="number" id="cli_cedula" name="cli_cedula" placeholder="Cedula Cliente" required></td>
         <td><input type="text" id="cli_nombre" name="cli_nombre" placeholder="Nombre Cliente" required></td>
         <td><input type="text" id="cli_apellido" name="cli_apellido" placeholder="Apellido Cliente" required></td>
         <td><input type="text" id="cli_correo" name="cli_correo" placeholder="Correo Cliente" required></td>
         <td><input type="number" id="cli_telefono" name="cli_telefono" placeholder="Telefono Cliente" required></td>
-
 
         <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar" /> </td>
       </table>

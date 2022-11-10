@@ -1,13 +1,10 @@
 
 <?php
 include '../business/supermercadoBusiness.php';
-
 ?>
 
 <!DOCTYPE html>
-
 <head>
-
   <title>Supermercados</title>
 </head>
 
@@ -17,14 +14,10 @@ include '../business/supermercadoBusiness.php';
     <div class="table-responsive">
       <table class="table table-bordered">
 
-
-
         <td><input type="number" id="sup_id" name="sup_id" placeholder="ID Supermercado" required></td>
         <td><input type="text" id="sup_nombre" name="sup_nombre" placeholder="Nombre Supermercado" required></td>
         <td><input type="number" id="sup_telefono" name="sup_telefono" placeholder="Telefono Supermercado" required></td>
       
-
-
         <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar" /> </td>
       </table>
     </div>

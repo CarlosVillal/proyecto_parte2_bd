@@ -1,14 +1,10 @@
-
 <?php
-
 include '../business/activoBusiness.php';
 include '../business/activoTipoProductoBusiness.php';
 ?>
 
 <!DOCTYPE html>
-
 <head>
-
   <title>Activos</title>
 </head>
 
@@ -32,9 +28,7 @@ include '../business/activoTipoProductoBusiness.php';
                                echo '<option value="'. $row->getTip_nombre(). '">'. $row->getTiptip_id(). ' - '. $row->getTip_nombre(). '</option>';                                
                              }
                              ?>
-                             </select></td>
-       
-
+                             </select></td>    
 
         <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar" /> </td>
       </table>
